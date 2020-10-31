@@ -43,7 +43,4 @@ class BerlinClock {
     public function get_minutes($minutes) {
 
     }
-
-
-
 }
