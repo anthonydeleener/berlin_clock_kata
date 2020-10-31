@@ -1,13 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Anthony
- * Date: 31/10/2020
- * Time: 17:23
- */
 
+require "vendor/autoload.php";
+require "BerlinClock.php";
 
-class BerlinClockTest extends PHPUnit_Framework_TestCase
-{
+use PHPUnit\Framework\TestCase;
+
+class BerlinClockTest extends TestCase {
+
+    private $berlinClock;
+
+    protected function setUp() : void {
+        parent::setUp();
+        $this->berlinClock = new BerlinClock();
+    }
+
+    public function test_five_hours_blocks() {
+        $actual = $this->berlinClock->get_five_hours(date("h"));
+        $this->assertEquals(3,$actual);
+    }
 
 }
+
