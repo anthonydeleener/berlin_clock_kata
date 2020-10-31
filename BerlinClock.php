@@ -71,4 +71,11 @@ class BerlinClock {
         }
         return $count;
     }
+
+    public function get_seconds($seconds){
+       if($seconds%2===0){
+           return 0;
+       }
+       return 1;
+    }
 }

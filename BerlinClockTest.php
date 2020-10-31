@@ -35,4 +35,10 @@ class BerlinClockTest extends TestCase
         $actual = $this->berlinClock->get_minutes($min);
         $this->assertEquals(floor($min%5),$actual);
     }
+
+    public function test_second_block(){
+        $second = date('s');
+        $actual = $this->berlinClock->get_seconds($second);
+        $this->assertEquals($second%2,$actual);
+    }
 }
