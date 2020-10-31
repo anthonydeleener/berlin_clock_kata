@@ -1,13 +1,11 @@
 <?php
 
-require "vendor/autoload.php";
 require "BerlinClock.php";
-
 use PHPUnit\Framework\TestCase;
 
-class BerlinClockTest extends TestCase {
-
-    private $berlinClock;
+class BerlinClockTest extends TestCase
+{
+      private $berlinClock;
 
     protected function setUp() : void {
         parent::setUp();
@@ -18,6 +16,4 @@ class BerlinClockTest extends TestCase {
         $actual = $this->berlinClock->get_five_hours(date("h"));
         $this->assertEquals(3,$actual);
     }
-
 }
-
