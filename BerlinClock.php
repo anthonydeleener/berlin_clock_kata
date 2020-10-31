@@ -17,11 +17,27 @@ class BerlinClock {
         return date("s");
     }
 
-    public function get_seconds($seconds) {
+    public function translate_second($seconds) {
         if ($seconds % 2 === 0) {
             return "S";
         }
         return "X";
+    }
+
+    public function translate_hours($hours) {
+        $toreturn = "";
+        for($i = $hours; $i>0; $i--) {
+            $toreturn .= "H";
+        }
+        return $toreturn;
+    }
+
+    public function translate_minutes($minutes) {
+        $toreturn = "";
+        for($i = $minutes; $i>0; $i--) {
+            $toreturn .= "M";
+        }
+        return $toreturn;
     }
 
     public function get_five_hours($hours) {
