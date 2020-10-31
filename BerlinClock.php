@@ -49,6 +49,10 @@ class BerlinClock {
     }
 
     public function get_minutes($minutes) {
-
+        $count = 0;
+        for($i=0;$i<floor($minutes%5);$i++){
+            $count++;
+        }
+        return $count;
     }
 }
