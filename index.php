@@ -6,4 +6,4 @@ $hours = $berlin_clock->init_hours();
 $minutes = $berlin_clock->init_minutes();
 $seconds = $berlin_clock->init_seconds();
 
-echo $seconds +":"+$minutes+":"+"$hours"+\n;
+echo $seconds +$minutes+$hours;

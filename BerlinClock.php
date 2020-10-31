@@ -6,7 +6,7 @@ class BerlinClock {
     }
 
     public function init_hours() {
-        return date("h");
+        return date("H");
     }
 
     public function init_minutes() {
@@ -41,7 +41,11 @@ class BerlinClock {
     }
 
     public function get_five_minutes($minutes) {
-
+        $count = 0;
+        for($i=0;$i<floor($minutes/5);$i++){
+            $count++;
+        }
+        return $count;
     }
 
     public function get_minutes($minutes) {
