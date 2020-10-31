@@ -33,7 +33,11 @@ class BerlinClock {
     }
 
     public function get_hours($hours) {
-
+        $count =0;
+        for($i=0;$i<floor($hours%5);$i++){
+            $count++;
+        }
+        return $count;
     }
 
     public function get_five_minutes($minutes) {

@@ -17,4 +17,10 @@ class BerlinClockTest extends TestCase
         $actual = $this->berlinClock->get_five_hours($hour);
         $this->assertEquals(floor($hour/5),$actual);
     }
+
+    public function test_hour_blocks(){
+        $hour = date("H");
+        $actual = $this->berlinClock->get_hours($hour);
+        $this->assertEquals(floor($hour%5),$actual);
+    }
 }
