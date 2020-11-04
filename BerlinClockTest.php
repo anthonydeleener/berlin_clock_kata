@@ -12,33 +12,43 @@ class BerlinClockTest extends TestCase
         $this->berlinClock = new BerlinClock();
     }
 
-    public function test_five_hours_block() {
+    public function testFiveHoursBlock() {
         $hour = date("H");
-        $actual = $this->berlinClock->get_five_hours($hour);
+
+        $actual = $this->berlinClock->getFiveHours($hour);
+
         $this->assertEquals(floor($hour/5),$actual);
     }
 
-    public function test_hour_block(){
+    public function testHourBlock(){
         $hour = date("H");
-        $actual = $this->berlinClock->get_hours($hour);
+
+        $actual = $this->berlinClock->getHours($hour);
+
         $this->assertEquals(floor($hour%5),$actual);
     }
 
-    public function test_five_minutes_block(){
+    public function testFiveMinutesBlock(){
         $min = date("m");
-        $actual = $this->berlinClock->get_five_minutes($min);
+
+        $actual = $this->berlinClock->getFiveMinutes($min);
+
         $this->assertEquals(floor($min/5),$actual);
     }
 
-    public function test_minute_block(){
+    public function testMinuteBlock(){
         $min = date("m");
-        $actual = $this->berlinClock->get_minutes($min);
+
+        $actual = $this->berlinClock->getMinutes($min);
+
         $this->assertEquals(floor($min%5),$actual);
     }
 
-    public function test_second_block(){
+    public function testSecondBlock(){
         $second = date('s');
-        $actual = $this->berlinClock->get_seconds($second);
+
+        $actual = $this->berlinClock->getSeconds($second);
+
         $this->assertEquals($second%2,$actual);
     }
 }

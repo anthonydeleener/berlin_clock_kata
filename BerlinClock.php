@@ -5,26 +5,26 @@ class BerlinClock {
     public function __construct() {
     }
 
-    public function init_hours() {
+    public function initHours() {
         return date("H");
     }
 
-    public function init_minutes() {
+    public function initMinutes() {
         return date("i");
     }
 
-    public function init_seconds() {
+    public function initSeconds() {
         return date("s");
     }
 
-    public function translate_second($seconds) {
+    public function translateSecond($seconds) {
         if ($seconds % 2 === 0) {
             return "S";
         }
         return "X";
     }
 
-    public function translate_hours($hours) {
+    public function translateHours($hours) {
         $toreturn = "";
         for($i = $hours; $i>0; $i--) {
             $toreturn .= "H";
@@ -32,7 +32,7 @@ class BerlinClock {
         return $toreturn;
     }
 
-    public function translate_minutes($minutes) {
+    public function translateMinutes($minutes) {
         $toreturn = "";
         for($i = $minutes; $i>0; $i--) {
             $toreturn .= "M";
@@ -40,7 +40,7 @@ class BerlinClock {
         return $toreturn;
     }
 
-    public function get_five_hours($hours) {
+    public function getFiveHours($hours) {
         $count = 0;
         for($i=0; $i<floor($hours/5); $i++) {
             $count++;
@@ -48,7 +48,7 @@ class BerlinClock {
         return $count;
     }
 
-    public function get_hours($hours) {
+    public function getHours($hours) {
         $count =0;
         for($i=0;$i<floor($hours%5);$i++){
             $count++;
@@ -56,7 +56,7 @@ class BerlinClock {
         return $count;
     }
 
-    public function get_five_minutes($minutes) {
+    public function getFiveMinutes($minutes) {
         $count = 0;
         for($i=0;$i<floor($minutes/5);$i++){
             $count++;
@@ -64,7 +64,7 @@ class BerlinClock {
         return $count;
     }
 
-    public function get_minutes($minutes) {
+    public function getMinutes($minutes) {
         $count = 0;
         for($i=0;$i<floor($minutes%5);$i++){
             $count++;
@@ -72,7 +72,7 @@ class BerlinClock {
         return $count;
     }
 
-    public function get_seconds($seconds){
+    public function getSeconds($seconds){
        if($seconds%2===0){
            return 0;
        }
